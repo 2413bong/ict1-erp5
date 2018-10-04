@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="level">
+
+  <select id="selectLevel" resultType="levelinfo" parameterType="levelinfo">
+    select * from Level_info
+    <where>
+	    <if test="liname!=null">
+	    	and liname = #{liname}
+	    </if>
+	    <if test="linum!=null">
+	    	and linum = #{linum}
+	    </if>
+    </where>
+    
+  </select>
+  
+</mapper>
